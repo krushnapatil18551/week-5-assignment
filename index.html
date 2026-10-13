@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple, interactive task manager built with HTML, CSS and JavaScript.">
+  <title>TaskFlow | Task Manager</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="TaskFlow home"><span class="brand-mark">✓</span> TaskFlow</a>
+    <nav aria-label="Main navigation"><a href="#tasks">My Tasks</a><a href="#about">About Project</a></nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">YOUR DAY, ORGANIZED</p>
+        <h1>Make room for<br><span>what matters.</span></h1>
+        <p class="hero-copy">Plan your tasks, track your progress, and get things done one step at a time.</p>
+      </div>
+      <div class="hero-stat" aria-live="polite">
+        <span class="stat-label">Tasks completed</span>
+        <strong id="completed-count">0</strong>
+        <span class="stat-sub" id="progress-label">Keep going — you've got this!</span>
+        <div class="progress-track"><div id="progress-bar" class="progress-bar"></div></div>
+      </div>
+    </section>
+
+    <section class="task-panel" id="tasks">
+      <div class="section-heading">
+        <div><p class="eyebrow">TASK MANAGER</p><h2>My tasks</h2></div>
+        <span class="task-total" id="task-count">0 tasks</span>
+      </div>
+
+      <form id="task-form" class="task-form">
+        <label class="sr-only" for="task-input">Task title</label>
+        <input id="task-input" name="task" type="text" maxlength="100" placeholder="What do you need to do?" autocomplete="off" required>
+        <label class="sr-only" for="category-input">Category</label>
+        <select id="category-input" name="category" aria-label="Task category">
+          <option value="Personal">Personal</option><option value="Study">Study</option><option value="Work">Work</option><option value="Other">Other</option>
+        </select>
+        <button class="primary-btn" type="submit">+ Add task</button>
+      </form>
+      <p id="form-message" class="form-message" aria-live="polite"></p>
+
+      <div class="toolbar">
+        <label class="search-wrap"><span class="sr-only">Search tasks</span><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Search tasks..." autocomplete="off"></label>
+        <div class="filter-group" role="group" aria-label="Filter tasks">
+          <button type="button" class="filter-btn active" data-filter="all">All</button>
+          <button type="button" class="filter-btn" data-filter="active">Active</button>
+          <button type="button" class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+        <label class="sr-only" for="category-filter">Filter by category</label>
+        <select id="category-filter" class="category-filter"><option value="all">All categories</option><option>Personal</option><option>Study</option><option>Work</option><option>Other</option></select>
+      </div>
+
+      <ul id="task-list" class="task-list" aria-live="polite"></ul>
+      <div id="empty-state" class="empty-state"><span class="empty-icon">✦</span><h3>No tasks here yet</h3><p>Add a task above and start building momentum.</p></div>
+      <div class="list-footer"><span id="remaining-count">0 tasks remaining</span><button type="button" id="clear-completed" class="text-btn">Clear completed</button></div>
+    </section>
+
+    <section class="about-panel" id="about">
+      <div class="about-icon">✦</div><div><h2>Small steps add up.</h2><p>TaskFlow is a student project demonstrating JavaScript functions, arrays, objects, DOM manipulation, and event handling in a practical task manager.</p></div>
+    </section>
+    <footer>Built with HTML, CSS & JavaScript <span>•</span> Week 5 JavaScript Project</footer>
+  </main>
+</body>
+</html>
